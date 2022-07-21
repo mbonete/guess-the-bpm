@@ -1,5 +1,5 @@
 {
-  "name": "bpm-counter",
+  "name": "guess-the-bpm",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
