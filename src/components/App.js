@@ -26,7 +26,7 @@ function App() {
           <TouchableButton onActivate={restart} type="secondary">Next Song</TouchableButton>
         </OptionsSection>
       </CounterSection>
-
+      <Footer>&copy; Maria Bonete Salmeron</Footer>
     </Wrapper>
   );
 }
@@ -71,6 +71,10 @@ const OptionsSection = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 28%;
+`;
+
+const Footer = styled.footer`
+  padding-top: 8px;
 `;
 
 
