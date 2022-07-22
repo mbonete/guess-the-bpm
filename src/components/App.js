@@ -10,7 +10,7 @@ function App() {
 
   return (
     <Wrapper>
-      <Title>BPM Counter</Title>
+      <Title>Guess The BPM</Title>
       
       <Subtitle>Press play!</Subtitle>
       
