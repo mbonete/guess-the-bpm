@@ -17,7 +17,7 @@ function App() {
       <YoutubeEmbed embedId={songCode}/>
 
       <ResultSection />
-      <Text>Press the TAP button rithmically for about 15 seconds and submit the result!</Text>
+      <Text>Press the TAP button rhythmically for about 15 seconds and submit the result!</Text>
       
       <CounterSection>
         <TouchableButton onActivate={recordBeat} type="primary">TAP</TouchableButton>
