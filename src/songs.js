@@ -1,4 +1,4 @@
-export default [
+const songs = [
   {
     songId: 'rY0WxgSXdEE',
     bpm: 110,
@@ -20,3 +20,5 @@ export default [
     bpm: 138,
   },
 ];
+
+export default songs;
