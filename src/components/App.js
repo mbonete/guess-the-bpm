@@ -40,6 +40,7 @@ const Wrapper = styled.div`
   padding: 32px;
   text-align: center;
   margin: auto;
+  max-width: 480px;
 `;
 const Title = styled.h1`
   padding: 16px;
