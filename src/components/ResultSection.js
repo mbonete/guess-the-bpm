@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { useGame, gameStatuses } from '../hooks/useGame';
-import Text from './Text';
 
 export default function ResultSection() {
   const { currentBPM, status, songBPM } = useGame();
@@ -36,18 +35,18 @@ const ResultDiv = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(173, 195, 238);
   height: 400px;
   width: 100%;
-  border-radius: 4px;
+  background-color: rgb(173, 195, 238);
+  border-radius: 15px;
   padding: 16px;
+  margin: 0 0 16px 0;
 `;
 
 const ResultElement = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: rgb(173, 195, 238);
   width: 50%;
   height: 100%;
   margin-top: -8px;
@@ -57,6 +56,13 @@ const ResultWrapper = styled.div`
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
+`;
+
+const Text = styled.h2`
+  font-size: 0.85rem;
+  padding: 8px;
+  font-weight: 400;
+  color: rgb(37, 37, 37);
 `;
 
 const Result = styled.h2`

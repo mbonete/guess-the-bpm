@@ -1,32 +1,37 @@
 import styled from 'styled-components';
-import { useGame } from '../hooks/useGame'
+import { gameStatuses, useGame } from '../hooks/useGame'
 import YoutubeEmbed from './YoutubeEmbed.js';
 import TouchableButton from './TouchableButton';
-import Text from './Text';
 import ResultSection from './ResultSection';
 
 function App() {
-  const {songCode, finish, restart, recordBeat, recordedBeats} = useGame();
+  const {songCode, finish, restart, nextSong, recordBeat, recordedBeats, status} = useGame();
 
   return (
     <Wrapper>
       <Title>Guess The BPM</Title>
-      
+
       <Subtitle>Press play!</Subtitle>
       
       <YoutubeEmbed embedId={songCode}/>
-
-      <ResultSection />
-      <Text>Press the TAP button rhythmically for about 15 seconds and submit the result!</Text>
       
+      <Text>Press 'TAP' rhythmically for about 15 seconds and submit the result!</Text>      
+     
+      <ResultSection />
+
       <CounterSection>
         <TouchableButton onActivate={recordBeat} type="primary">TAP</TouchableButton>
         <OptionsSection>
-          <TouchableButton onActivate={finish} type="secondary" disabled={recordedBeats.length < 2}>Submit</TouchableButton>
-          <TouchableButton onActivate={restart} type="secondary">Next Song</TouchableButton>
+          <TouchableButton onActivate={finish} type="secondary" disabled={recordedBeats.length < 2 || status === gameStatuses.FINISHED}>Submit</TouchableButton>
+          <TouchableButton 
+            onActivate={restart} type="secondary" 
+            disabled={recordedBeats.length < 1 || status === gameStatuses.FINISHED}>
+              Restart
+            </TouchableButton>
+          <TouchableButton onActivate={nextSong} type="secondary">Next Song</TouchableButton>
         </OptionsSection>
       </CounterSection>
-      <Footer>&copy; Maria Bonete Salmeron</Footer>
+      <Footer> Made with &hearts; Maria Bonete Salmeron</Footer>
     </Wrapper>
   );
 }
@@ -37,24 +42,38 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 100%;  
-  padding: 32px;
+  padding: 16px;
   text-align: center;
   margin: auto;
   max-width: 480px;
 `;
-const Title = styled.h1`
+const Title = styled.p`
   padding: 16px;
   width: 100%;
+  color: black;
+  font-size: clamp(0.85rem, 8vw, 2rem);
+  font-weight: 400;
+  background-color: rgb(212, 220, 237);
+  font-family: 'Aclonica', sans-serif;
+
+  // border: 4px solid;
+  // border-image: linear-gradient(90deg, rgba(68,131,255,1), rgba(170,28,171,1), rgba(255,75,30,1)) 1;
+`;
+
+const Text = styled.h2`
+  font-size: 0.85rem;
+  padding: 4px;
+  padding-bottom: 8px;
+  max-width: 30ch;
+  font-weight: 400;
   color: rgb(37, 37, 37);
-  border: 4px solid;
-  border-image: linear-gradient(90deg, rgba(68,131,255,1), rgba(170,28,171,1), rgba(255,75,30,1)) 1;
 `;
 
 const Subtitle = styled.h2`
   font-size: 1rem;
   padding: 8px;
   color: rgb(37, 37, 37);
-  margin-bottom:-8px;
+  margin-bottom: -8px;
 `;
 
 
@@ -74,7 +93,9 @@ const OptionsSection = styled.div`
 `;
 
 const Footer = styled.footer`
-  padding-top: 8px;
+  padding-top: 16px;
+  margin-bottom: -4px;
+  font-size: 0.85rem
 `;
 
 

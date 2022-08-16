@@ -19,6 +19,13 @@ const INITIAL_STATE = {
 const gameReducer = (state, action) => {
   switch (action.type) {
     case 'restart':
+      return {
+        ...state,
+        recordedBeats: [],
+        currentBPM: undefined,
+      };
+;
+    case 'next-song':
       const song = songs[Math.floor(Math.random()*songs.length)];
       return {
         ...INITIAL_STATE,
@@ -57,12 +64,14 @@ export const GameProvider = ({ children }) => {
   const restart = () => dispatch({ type: 'restart' });
   const finish = () => dispatch({ type: 'finish' });
   const recordBeat = () => dispatch({ type: 'beat' });
+  const nextSong = () => dispatch({ type: 'next-song'});
 
 
   const context = {
     ...state,
     restart,
     finish,
+    nextSong,
     recordBeat,
   };
 

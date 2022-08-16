@@ -16,10 +16,8 @@ const YoutubeEmbed = ({ embedId }) => (
 );
 
 const Wrapper = styled.div`
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
   margin: 8px 0;
+  width: 100%;
 `;
   
 
