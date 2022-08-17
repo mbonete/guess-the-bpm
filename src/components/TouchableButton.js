@@ -9,7 +9,8 @@ const Primary = styled.button`
   background: linear-gradient(90deg, rgba(255,75,30,1) 0%, rgba(170,28,171,1) 49%, rgba(68,131,255,1) 100%);
   border: transparent;
   border-radius: 40px 0 0 40px ;
-  font-family: 'Gluten', cursive;    
+  font-family: 'Gluten', cursive; 
+  padding: 8px;   
   `;
 
 const Secondary = styled.button`
@@ -19,6 +20,8 @@ const Secondary = styled.button`
   font-size: clamp(0.4rem, 4vw, 1rem);
   border-image: linear-gradient(90deg, rgba(68,131,255,1), rgba(170,28,171,1), rgba(255,75,30,1)) 1;
   background-color: white;
+  padding: 4px;   
+
 `;
 
 const types = {

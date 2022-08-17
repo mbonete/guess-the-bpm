@@ -5,7 +5,7 @@ export default function ResultSection() {
   const { currentBPM, status, songBPM } = useGame();
 
   const isFinished = status === gameStatuses.FINISHED;
-  const isCorrectAnswer = songBPM === currentBPM;
+  const isCorrectAnswer = songBPM === currentBPM || songBPM ===  currentBPM + 1 || songBPM ===  currentBPM - 1;
   
   let color = 'black';
   if (isFinished) color = isCorrectAnswer ? '#0c731b' : '#a30d0d';
