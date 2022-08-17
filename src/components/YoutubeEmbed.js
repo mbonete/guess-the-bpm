@@ -23,6 +23,8 @@ const Wrapper = styled.div`
 
 const Video = styled.iframe`
   position: block;
+  border-radius: 4px;
+
 `;
 
 export default YoutubeEmbed;

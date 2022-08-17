@@ -48,16 +48,14 @@ const Wrapper = styled.div`
   max-width: 480px;
 `;
 const Title = styled.p`
-  padding: 16px;
+  padding: 8px;
   width: 100%;
   color: black;
-  font-size: clamp(0.85rem, 8vw, 2rem);
+  font-size: clamp(0.85rem, 9vw, 2rem);
   font-weight: 400;
   background-color: rgb(212, 220, 237);
-  font-family: 'Aclonica', sans-serif;
-
-  // border: 4px solid;
-  // border-image: linear-gradient(90deg, rgba(68,131,255,1), rgba(170,28,171,1), rgba(255,75,30,1)) 1;
+  font-family: 'Gluten', cursive;    
+  border-radius: 4px;
 `;
 
 const Text = styled.h2`

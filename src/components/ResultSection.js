@@ -8,7 +8,7 @@ export default function ResultSection() {
   const isCorrectAnswer = songBPM === currentBPM;
   
   let color = 'black';
-  if (isFinished) color = isCorrectAnswer ? 'green' : 'red';
+  if (isFinished) color = isCorrectAnswer ? '#0c731b' : '#a30d0d';
 
   return (
     <ResultDiv>
@@ -35,10 +35,9 @@ const ResultDiv = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 400px;
   width: 100%;
-  background-color: rgb(173, 195, 238);
-  border-radius: 15px;
+  background-color: rgb(212, 220, 237);
+  border-radius: 4px;
   padding: 16px;
   margin: 0 0 16px 0;
 `;
@@ -69,6 +68,7 @@ const Result = styled.h2`
   font-size: 2rem;
   padding: 0 4px;
   line-height: 1;
+  font-family: 'Gluten', cursive;    
 
 `;
 
