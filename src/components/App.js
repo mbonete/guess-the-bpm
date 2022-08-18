@@ -81,6 +81,7 @@ const CounterSection = styled.div`
   justify-content: space-between;
   height: 100%;
   width: 100%;
+  max-height: 250px;
 `;
 
 const OptionsSection = styled.div`

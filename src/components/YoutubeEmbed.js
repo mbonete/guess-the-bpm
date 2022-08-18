@@ -18,13 +18,13 @@ const YoutubeEmbed = ({ embedId }) => (
 const Wrapper = styled.div`
   margin: 8px 0;
   width: 100%;
+  height: 100%;
 `;
   
 
 const Video = styled.iframe`
   position: block;
   border-radius: 4px;
-
 `;
 
 export default YoutubeEmbed;
