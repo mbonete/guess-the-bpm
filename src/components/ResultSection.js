@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { useGame, gameStatuses } from '../hooks/useGame';
+import {useTranslation} from '../hooks/useTranslation'
 
 export default function ResultSection() {
   const { currentBPM, status, songBPM } = useGame();
+  const { t } = useTranslation();
 
   const isFinished = status === gameStatuses.FINISHED;
   const isCorrectAnswer = songBPM === currentBPM || songBPM ===  currentBPM + 1 || songBPM ===  currentBPM - 1;
@@ -13,14 +15,14 @@ export default function ResultSection() {
   return (
     <ResultDiv>
       <ResultElement>
-        <Text>Your result is:</Text>
+        <Text>{t('yourResult')}</Text>
         <ResultWrapper>
           <Result>{ currentBPM ? currentBPM : '?'}</Result>
           <Unit>BPM</Unit>
         </ResultWrapper>
       </ResultElement>
       <ResultElement>
-        <Text>The song has:</Text>
+        <Text>{t('songResult')}</Text>
         <ResultWrapper>
           <Result style={{color}}>{isFinished ? songBPM : '?'}</Result>
           <Unit>BPM</Unit>

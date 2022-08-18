@@ -3,32 +3,43 @@ import { gameStatuses, useGame } from '../hooks/useGame'
 import YoutubeEmbed from './YoutubeEmbed.js';
 import TouchableButton from './TouchableButton';
 import ResultSection from './ResultSection';
+import LanguageButton from './LanguageButton';
+import { useTranslation } from '../hooks/useTranslation'
 
 function App() {
-  const {songCode, finish, restart, nextSong, recordBeat, recordedBeats, status} = useGame();
-
+  const { songCode, finish, restart, nextSong, recordBeat, recordedBeats, status } = useGame();
+  const { t } = useTranslation();
   return (
     <Wrapper>
-      <Title>Guess The BPM</Title>
-
-      <Subtitle>Press play!</Subtitle>
+      <Title>{t('title')}</Title>
+      <Header>
+        <Subtitle>{t('subtitle')}</Subtitle>
+        <LanguageSettings>
+          <LanguageButton>English</LanguageButton> 
+          <LanguageButton>Español</LanguageButton> 
+        </LanguageSettings>
+      </Header>
       
       <YoutubeEmbed embedId={songCode}/>
       
-      <Text>Press 'TAP' rhythmically for about 15 seconds and submit the result!</Text>      
+      <Text>{t('instructions')}</Text>      
      
       <ResultSection />
 
       <CounterSection>
         <TouchableButton onActivate={recordBeat} type="primary">TAP</TouchableButton>
         <OptionsSection>
-          <TouchableButton onActivate={finish} type="secondary" disabled={recordedBeats.length < 2 || status === gameStatuses.FINISHED}>Submit</TouchableButton>
+          <TouchableButton 
+            onActivate={finish} type="secondary" 
+            disabled={recordedBeats.length < 2 || status === gameStatuses.FINISHED}>
+              {t('submit')}
+          </TouchableButton>
           <TouchableButton 
             onActivate={restart} type="secondary" 
             disabled={recordedBeats.length < 1 || status === gameStatuses.FINISHED}>
-              Restart
+              {t('restart')}
             </TouchableButton>
-          <TouchableButton onActivate={nextSong} type="secondary">Next Song</TouchableButton>
+          <TouchableButton onActivate={nextSong} type="secondary">{t('nextSong')}</TouchableButton>
         </OptionsSection>
       </CounterSection>
       <Footer> Made with &hearts; Maria Bonete Salmeron</Footer>
@@ -58,6 +69,26 @@ const Title = styled.p`
   border-radius: 4px;
 `;
 
+const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 4px;
+  align-items: baseline;
+`;
+
+const LanguageSettings = styled.div`
+  display: flex;
+  gap: 8px;
+`;
+
+const Subtitle = styled.h2`
+  font-size: 1rem;
+  padding: 8px;
+  color: rgb(37, 37, 37);
+  font-weight: 400;
+`;
+
 const Text = styled.h2`
   font-size: 0.85rem;
   padding: 4px;
@@ -66,15 +97,6 @@ const Text = styled.h2`
   font-weight: 400;
   color: rgb(37, 37, 37);
 `;
-
-const Subtitle = styled.h2`
-  font-size: 1rem;
-  padding: 8px;
-  color: rgb(37, 37, 37);
-  margin-bottom: -8px;
-`;
-
-
 
 const CounterSection = styled.div`
   display: flex;
