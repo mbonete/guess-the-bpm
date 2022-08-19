@@ -14,14 +14,13 @@ const Primary = styled.button`
   `;
 
 const Secondary = styled.button`
+  flex: 1;
   width: 100%;
-  height: 30%;
   border: 4px solid;
-  font-size: clamp(0.4rem, 4vw, 1rem);
+  font-size: clamp(0.65rem, 3.5vw, 1rem);
   border-image: linear-gradient(90deg, rgba(68,131,255,1), rgba(170,28,171,1), rgba(255,75,30,1)) 1;
   background-color: white;
-  padding: 4px;   
-
+  padding: 4px;  
 `;
 
 const types = {

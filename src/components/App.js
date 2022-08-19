@@ -14,10 +14,7 @@ function App() {
       <Title>{t('title')}</Title>
       <Header>
         <Subtitle>{t('subtitle')}</Subtitle>
-        <LanguageSettings>
-          <LanguageButton>English</LanguageButton> 
-          <LanguageButton>Español</LanguageButton> 
-        </LanguageSettings>
+        <LanguageButton>Eng/Esp</LanguageButton> 
       </Header>
       
       <YoutubeEmbed embedId={songCode}/>
@@ -57,6 +54,7 @@ const Wrapper = styled.div`
   text-align: center;
   margin: auto;
   max-width: 480px;
+  min-width: 280px;
 `;
 const Title = styled.p`
   padding: 8px;
@@ -75,11 +73,6 @@ const Header = styled.header`
   width: 100%;
   margin: 4px;
   align-items: baseline;
-`;
-
-const LanguageSettings = styled.div`
-  display: flex;
-  gap: 8px;
 `;
 
 const Subtitle = styled.h2`
@@ -111,6 +104,7 @@ const OptionsSection = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 28%;
+  gap: 8px;
 `;
 
 const Footer = styled.footer`
