@@ -15,8 +15,7 @@ const Button = styled.div`
   border-radius: 8px;
   background-color: #edc4ef;
   width: fit-content;
-  font-size: 0.85rem;
-  font-family: 'Gluten', sans-serif;
+  font-size: 0.75rem;
 `;
 
 

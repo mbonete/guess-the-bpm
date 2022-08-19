@@ -5,6 +5,7 @@ import TouchableButton from './TouchableButton';
 import ResultSection from './ResultSection';
 import LanguageButton from './LanguageButton';
 import { useTranslation } from '../hooks/useTranslation'
+import { Activity } from 'react-feather';
 
 function App() {
   const { songCode, finish, restart, nextSong, recordBeat, recordedBeats, status } = useGame();
@@ -14,17 +15,21 @@ function App() {
       <Title>{t('title')}</Title>
       <Header>
         <Subtitle>{t('subtitle')}</Subtitle>
-        <LanguageButton>Eng/Esp</LanguageButton> 
+        <LanguageButton>Eng / Esp</LanguageButton> 
       </Header>
       
       <YoutubeEmbed embedId={songCode}/>
-      
-      <Text>{t('instructions')}</Text>      
-     
+           
       <ResultSection />
 
+      <Text>{t('instructions')}</Text>      
+
       <CounterSection>
-        <TouchableButton onActivate={recordBeat} type="primary">TAP</TouchableButton>
+        <TouchableButton onActivate={recordBeat} type="primary">
+          <IconWrapper>
+            <Activity size={90} />
+          </IconWrapper>
+        </TouchableButton>
         <OptionsSection>
           <TouchableButton 
             onActivate={finish} type="secondary" 
@@ -63,8 +68,10 @@ const Title = styled.p`
   font-size: clamp(0.85rem, 9vw, 2rem);
   font-weight: 400;
   background-color: rgb(212, 220, 237);
-  font-family: 'Gluten', cursive;    
+  font-family: 'Ranchers', cursive;    
   border-radius: 4px;
+  letter-spacing: 1px;
+  word-spacing: 6px;
 `;
 
 const Header = styled.header`
@@ -77,16 +84,14 @@ const Header = styled.header`
 
 const Subtitle = styled.h2`
   font-size: 1rem;
-  padding: 8px;
+  padding: 8px 0;
   color: rgb(37, 37, 37);
   font-weight: 400;
 `;
 
 const Text = styled.h2`
   font-size: 0.85rem;
-  padding: 4px;
-  padding-bottom: 8px;
-  max-width: 30ch;
+  padding: 8px 0;
   font-weight: 400;
   color: rgb(37, 37, 37);
 `;
@@ -97,6 +102,14 @@ const CounterSection = styled.div`
   height: 100%;
   width: 100%;
   max-height: 250px;
+`;
+
+const IconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 `;
 
 const OptionsSection = styled.div`

@@ -41,7 +41,6 @@ const ResultDiv = styled.div`
   background-color: rgb(212, 220, 237);
   border-radius: 4px;
   padding: 16px;
-  margin: 0 0 16px 0;
 `;
 
 const ResultElement = styled.div`
@@ -70,7 +69,8 @@ const Result = styled.h2`
   font-size: 2rem;
   padding: 0 4px;
   line-height: 1;
-  font-family: 'Gluten', cursive;    
+  letter-spacing: 2px;
+  font-family: 'Ranchers', cursive;    
 
 `;
 

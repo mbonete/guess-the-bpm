@@ -1,17 +1,16 @@
 import styled from 'styled-components';
 
 const Primary = styled.button`
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 70%;
   color: white;
-  font-size: clamp(3rem, 15vw, 4rem);
-  letter-spacing: 2px;
   background: linear-gradient(90deg, rgba(255,75,30,1) 0%, rgba(170,28,171,1) 49%, rgba(68,131,255,1) 100%);
   border: transparent;
   border-radius: 40px 0 0 40px ;
-  font-family: 'Gluten', cursive; 
   padding: 8px;   
-  `;
+`;
 
 const Secondary = styled.button`
   flex: 1;
