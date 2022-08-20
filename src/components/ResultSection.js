@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useGame, gameStatuses } from '../hooks/useGame';
-import {useTranslation} from '../hooks/useTranslation'
+import { useTranslation } from 'react-i18next';
 
 export default function ResultSection() {
   const { currentBPM, status, songBPM } = useGame();

@@ -4,7 +4,7 @@ import YoutubeEmbed from './YoutubeEmbed.js';
 import TouchableButton from './TouchableButton';
 import ResultSection from './ResultSection';
 import LanguageButton from './LanguageButton';
-import { useTranslation } from '../hooks/useTranslation'
+import { useTranslation } from 'react-i18next';
 import { Activity } from 'react-feather';
 
 function App() {
