@@ -10,6 +10,11 @@ const Primary = styled.button`
   border: transparent;
   border-radius: 40px 0 0 40px ;
   padding: 8px;   
+
+  &:active {
+    transform: scale(1.01, 1.01);
+    background: linear-gradient(90deg, rgb(255, 84, 42) 0%, rgb(173, 52, 173) 49%, rgb(87, 142, 252) 100%);
+  }
 `;
 
 const Secondary = styled.button`
@@ -20,6 +25,10 @@ const Secondary = styled.button`
   border-image: linear-gradient(90deg, rgba(68,131,255,1), rgba(170,28,171,1), rgba(255,75,30,1)) 1;
   background-color: white;
   padding: 4px;  
+
+  &:active {
+    background-color: rgb(212, 220, 237);
+  }
 `;
 
 const types = {
