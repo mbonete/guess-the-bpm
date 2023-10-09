@@ -38,7 +38,7 @@ const ResultDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: rgb(212, 220, 237);
+  background-color: #fff2ee;
   border-radius: 4px;
   padding: 16px;
 `;
@@ -70,8 +70,6 @@ const Result = styled.h2`
   padding: 0 4px;
   line-height: 1;
   letter-spacing: 2px;
-  font-family: 'Ranchers', cursive;    
-
 `;
 
 const Unit = styled.h3`

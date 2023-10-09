@@ -2,18 +2,17 @@ import styled from 'styled-components';
 
 const Primary = styled.button`
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 70%;
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
   color: white;
-  background: linear-gradient(90deg, rgba(255,75,30,1) 0%, rgba(170,28,171,1) 49%, rgba(68,131,255,1) 100%);
+  background-color: #FF7F50;
   border: transparent;
-  border-radius: 40px 0 0 40px ;
-  padding: 8px;   
+  border-radius: 100px;
 
   &:active {
-    transform: scale(1.01, 1.01);
-    background: linear-gradient(90deg, rgb(255, 84, 42) 0%, rgb(173, 52, 173) 49%, rgb(87, 142, 252) 100%);
+    transform: scale(0.99);
+    background-color: #ff8559;
   }
 `;
 
@@ -22,7 +21,8 @@ const Secondary = styled.button`
   width: 100%;
   border: 4px solid;
   font-size: clamp(0.65rem, 3.5vw, 1rem);
-  border-image: linear-gradient(90deg, rgba(68,131,255,1), rgba(170,28,171,1), rgba(255,75,30,1)) 1;
+  border: 3px solid #FF7F50;
+  border-radius: 50px;
   background-color: white;
   padding: 4px;  
 

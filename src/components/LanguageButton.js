@@ -25,14 +25,14 @@ const LanguageButton = function({children}) {
 
 const Button = styled.div`
   border: transparent;
-  padding: 8px;
-  border-radius: 8px;
-  background-color: rgb(237, 196, 239);
+  padding: 4px 8px;
+  border-radius: 50px;
+  border: 2px solid #FF7F50;
   width: fit-content;
   font-size: 0.75rem;
 
   &:active {
-    background-color: rgb(223, 169, 226);
+    background-color: #FF7F50;
   }
 `;
 

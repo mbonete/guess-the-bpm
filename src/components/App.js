@@ -44,7 +44,7 @@ function App() {
           <TouchableButton onActivate={nextSong} type="secondary">{t('nextSong')}</TouchableButton>
         </OptionsSection>
       </CounterSection>
-      <Footer> Made with &hearts; Maria Bonete Salmeron</Footer>
+      <Footer> Made from Spain with &hearts; Maria Bonete </Footer>
     </Wrapper>
   );
 }
@@ -64,13 +64,11 @@ const Wrapper = styled.div`
 const Title = styled.p`
   padding: 8px;
   width: 100%;
-  color: black;
+  color: #ff7f50;
   font-size: clamp(0.85rem, 9vw, 2rem);
-  font-weight: 400;
-  background-color: rgb(212, 220, 237);
-  font-family: 'Ranchers', cursive;    
+  font-weight: 600;
+  background-color: #fff2ee;
   border-radius: 4px;
-  letter-spacing: 1px;
   word-spacing: 6px;
 `;
 
@@ -98,10 +96,11 @@ const Text = styled.h2`
 
 const CounterSection = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
   width: 100%;
-  max-height: 250px;
+  gap: 24px;
 `;
 
 const IconWrapper = styled.div`
@@ -114,9 +113,7 @@ const IconWrapper = styled.div`
 
 const OptionsSection = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  width: 28%;
   gap: 8px;
 `;
 
