@@ -1,5 +1,11 @@
-<svg width="374" height="374" viewBox="0 0 374 374" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="187" cy="187" r="187" fill="#FF4B1E"/>
-<circle cx="187" cy="187" r="138" fill="#AA1CAB"/>
-<circle cx="187" cy="187" r="86" fill="#4483FF"/>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="14" fill="#080810"/>
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#2e86ff" stroke-width="2.5" opacity="0.9"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#2e86ff" stroke-width="1" opacity="0.3"/>
+  <circle cx="32" cy="32" r="10" fill="none" stroke="#e8233a" stroke-width="1.5" opacity="0.5"/>
+  <line x1="14" y1="32" x2="22" y2="32" stroke="#2e86ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="42" y1="32" x2="50" y2="32" stroke="#2e86ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="32" y1="14" x2="32" y2="22" stroke="#e8233a" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="32" y1="42" x2="32" y2="50" stroke="#e8233a" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <circle cx="32" cy="32" r="3" fill="#2e86ff"/>
 </svg>
