@@ -1,26 +1,38 @@
 import { useTranslation } from 'react-i18next'
-import { useState, type ReactNode } from 'react'
+import { useState } from 'react'
 
-interface LanguageButtonProps {
-  children: ReactNode
+const languages = ['en', 'es'] as const
+type Language = (typeof languages)[number]
+
+const labels: Record<Language, string> = {
+  en: 'EN',
+  es: 'ES',
 }
 
-export default function LanguageButton({ children }: LanguageButtonProps) {
-  const [language, setLanguage] = useState('en')
+export default function LanguageButton() {
+  const [language, setLanguage] = useState<Language>('en')
   const { i18n } = useTranslation()
 
-  const handleClick = () => {
-    const next = language === 'en' ? 'es' : 'en'
-    setLanguage(next)
-    i18n.changeLanguage(next)
+  const handleClick = (lang: Language) => {
+    setLanguage(lang)
+    i18n.changeLanguage(lang)
   }
 
   return (
-    <button
-      className="border-2 border-coral px-2 py-1 rounded-[50px] w-fit text-[0.75rem] bg-transparent active:bg-coral cursor-pointer"
-      onClick={handleClick}
-    >
-      {children}
-    </button>
+    <div className="flex rounded-lg overflow-hidden border border-border text-xs">
+      {languages.map((lang) => (
+        <button
+          key={lang}
+          onClick={() => handleClick(lang)}
+          className={`px-3 py-1 font-medium transition-colors duration-150 cursor-pointer ${
+            language === lang
+              ? 'bg-accent text-white'
+              : 'bg-transparent text-text-secondary hover:bg-bg-card-hover'
+          }`}
+        >
+          {labels[lang]}
+        </button>
+      ))}
+    </div>
   )
 }

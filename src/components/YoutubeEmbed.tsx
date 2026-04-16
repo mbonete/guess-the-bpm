@@ -4,9 +4,9 @@ interface YoutubeEmbedProps {
 
 export default function YoutubeEmbed({ embedId }: YoutubeEmbedProps) {
   return (
-    <div className="my-2 w-full h-full">
+    <div className="w-full bg-bg-card rounded-2xl overflow-hidden ring-1 ring-border">
       <iframe
-        className="w-full h-full rounded"
+        className="w-full aspect-video"
         src={`https://www.youtube.com/embed/${embedId}`}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         title="Embedded youtube"

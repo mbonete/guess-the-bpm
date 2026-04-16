@@ -1,64 +1,97 @@
-import { gameStatuses, useGame } from '../hooks/useGame'
-import YoutubeEmbed from './YoutubeEmbed'
-import TouchableButton from './TouchableButton'
-import ResultSection from './ResultSection'
-import LanguageButton from './LanguageButton'
-import { useTranslation } from 'react-i18next'
-import { Activity } from 'lucide-react'
+import { gameStatuses, useGame } from "../hooks/useGame";
+import YoutubeEmbed from "./YoutubeEmbed";
+import TouchableButton from "./TouchableButton";
+import ResultSection from "./ResultSection";
+import LanguageButton from "./LanguageButton";
+import { useTranslation } from "react-i18next";
+import { Activity } from "lucide-react";
 
 export default function App() {
-  const { songCode, finish, restart, nextSong, recordBeat, recordedBeats, status } = useGame()
-  const { t } = useTranslation()
+  const {
+    songCode,
+    finish,
+    restart,
+    nextSong,
+    recordBeat,
+    recordedBeats,
+    status,
+  } = useGame();
+  const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col items-center justify-between h-full p-4 text-center mx-auto max-w-[480px] min-w-[280px]">
-      <p className="p-2 w-full text-coral font-semibold text-[clamp(0.85rem,9vw,2rem)] bg-cream rounded tracking-widest">
-        {t('title')}
-      </p>
+    <div className="relative flex flex-col min-h-screen w-full max-w-120 min-w-70 px-4 py-6 gap-5">
+      <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(rgba(232,35,58,0.15)_1px,transparent_1px)] bg-size-[32px_32px]" />
 
-      <header className="flex justify-between w-full my-1 items-baseline">
-        <h2 className="text-base py-2 text-dark font-normal">{t('subtitle')}</h2>
-        <LanguageButton>Eng / Esp</LanguageButton>
+      <header className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-accent" />
+          <h1 className="text-lg font-bold uppercase tracking-widest text-text-primary">
+            {t("title")}
+          </h1>
+        </div>
+        <LanguageButton />
       </header>
 
       <YoutubeEmbed embedId={songCode} />
 
       <ResultSection />
 
-      <h2 className="text-[0.85rem] py-2 font-normal text-dark">
-        {t('instructions')}
-      </h2>
+      <p className="text-sm text-text-secondary text-center">
+        {t("instructions")}
+      </p>
 
-      <div className="flex flex-col justify-center h-full w-full gap-6">
-        <TouchableButton onActivate={recordBeat} type="primary">
-          <div className="flex justify-center items-center h-full w-full">
-            <Activity size={90} />
-          </div>
+      <div className="relative flex flex-col items-center justify-center flex-1 gap-6">
+        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center gap-[3px] opacity-20 pointer-events-none">
+          {Array.from({ length: 40 }).map((_, i) => {
+            const center = 20;
+            const dist = Math.abs(i - center);
+            const height = Math.max(4, 32 - dist * 1.4 + Math.sin(i * 1.7) * 8);
+            return (
+              <div
+                key={i}
+                className="w-0.75 rounded-full bg-accent-secondary"
+                style={{ height: `${height}px` }}
+              />
+            );
+          })}
+        </div>
+
+        <TouchableButton
+          onActivate={recordBeat}
+          type="primary"
+          beatCount={recordedBeats.length}
+        >
+          <Activity size={72} strokeWidth={1.5} />
         </TouchableButton>
-        <div className="flex justify-between gap-2">
+
+        <div className="flex w-full gap-3">
           <TouchableButton
             onActivate={finish}
             type="secondary"
-            disabled={recordedBeats.length < 2 || status === gameStatuses.FINISHED}
+            disabled={
+              recordedBeats.length < 2 || status === gameStatuses.FINISHED
+            }
           >
-            {t('submit')}
+            {t("submit")}
           </TouchableButton>
           <TouchableButton
             onActivate={restart}
             type="secondary"
-            disabled={recordedBeats.length < 1 || status === gameStatuses.FINISHED}
+            disabled={
+              recordedBeats.length < 1 || status === gameStatuses.FINISHED
+            }
           >
-            {t('restart')}
+            {t("restart")}
           </TouchableButton>
           <TouchableButton onActivate={nextSong} type="secondary">
-            {t('nextSong')}
+            {t("nextSong")}
           </TouchableButton>
         </div>
       </div>
 
-      <footer className="pt-4 -mb-1 text-[0.85rem]">
+      <footer className="text-xs text-text-secondary text-center pt-2">
         Made from Spain with &hearts; Maria Bonete
       </footer>
     </div>
-  )
+  );
 }
