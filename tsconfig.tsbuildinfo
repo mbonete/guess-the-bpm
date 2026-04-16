@@ -1,0 +1,15 @@
+{
+  "root": [
+    "./src/i18n.ts",
+    "./src/main.tsx",
+    "./src/songs.ts",
+    "./src/vite-env.d.ts",
+    "./src/components/app.tsx",
+    "./src/components/languagebutton.tsx",
+    "./src/components/resultsection.tsx",
+    "./src/components/touchablebutton.tsx",
+    "./src/components/youtubeembed.tsx",
+    "./src/hooks/usegame.tsx"
+  ],
+  "version": "5.9.3"
+}
