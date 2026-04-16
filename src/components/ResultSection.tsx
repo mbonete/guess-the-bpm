@@ -133,21 +133,21 @@ export default function ResultSection() {
           )}
         </div>
       </div>
-
-      {isFinished && currentBPM !== undefined && (
-        <div className="flex justify-center animate-[fade-in-up_0.4s_ease-out_0.3s_both]">
-          <span
-            className={clsx(
-              "text-sm font-medium px-4 py-1 rounded-full bg-bg-card",
-              getProximityColor(diff)
-            )}
-          >
-            {absDiff === 0
-              ? t("nailedIt")
-              : t(getProximityKey(diff), { diff: diffStr })}
-          </span>
-        </div>
-      )}
+      <div className="h-8 flex justify-center items-center">
+        <span
+          className={clsx(
+            "text-sm font-medium px-4 py-1 rounded-full bg-bg-card",
+            isFinished && currentBPM !== undefined
+              ? "animate-[fade-in-up_0.4s_ease-out_0.3s_both]"
+              : "invisible",
+            getProximityColor(diff)
+          )}
+        >
+          {absDiff === 0
+            ? t("nailedIt")
+            : t(getProximityKey(diff), { diff: diffStr })}
+        </span>
+      </div>
     </div>
   );
 }

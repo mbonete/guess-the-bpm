@@ -36,11 +36,11 @@ export default function App() {
 
       <ResultSection />
 
-      <p className="text-sm text-text-secondary text-center">
-        {t("instructions")}
-      </p>
-
       <div className="relative flex flex-col items-center justify-center flex-1 gap-6">
+        <p className="text-sm text-text-secondary text-center">
+          {t("instructions")}
+        </p>
+
         <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center gap-[3px] opacity-20 pointer-events-none">
           {Array.from({ length: 40 }).map((_, i) => {
             const center = 20;
