@@ -20,8 +20,6 @@ export default function App() {
 
   return (
     <div className="relative flex flex-col min-h-screen w-full max-w-120 min-w-70 px-4 py-6 gap-5">
-      <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(rgba(232,35,58,0.15)_1px,transparent_1px)] bg-size-[32px_32px]" />
-
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-accent" />
@@ -42,10 +40,10 @@ export default function App() {
         </p>
 
         <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center gap-[3px] opacity-20 pointer-events-none">
-          {Array.from({ length: 40 }).map((_, i) => {
-            const center = 20;
+          {Array.from({ length: 60 }).map((_, i) => {
+            const center = 30;
             const dist = Math.abs(i - center);
-            const height = Math.max(4, 32 - dist * 1.4 + Math.sin(i * 1.7) * 8);
+            const height = Math.max(4, 40 - dist * 1.4 + Math.sin(i * 1.7) * 8);
             return (
               <div
                 key={i}
@@ -92,6 +90,7 @@ export default function App() {
       <footer className="text-xs text-text-secondary text-center pt-2">
         Made from Spain with &hearts; Maria Bonete
       </footer>
+      <div className="fixed inset-0 -z-10 pointer-events-none bg-[radial-gradient(rgba(232,35,58,0.15)_1.5px,transparent_1.5px)] bg-size-[32px_32px]" />
     </div>
   );
 }
